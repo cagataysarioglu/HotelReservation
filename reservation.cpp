@@ -96,7 +96,7 @@ void Otel::OdaRezervasyonu()
           cin>>soyad;
           cout<<"Kalacağınız gün sayısı: ";
           cin>>x2;
-          Toplam += x2*50;
+          Toplam += x2 * 50;
           SayacIki++;
           MusteriAdi[j] = new string;
           *MusteriAdi[j] = ad;
@@ -111,16 +111,16 @@ void Otel::OdaRezervasyonu()
     case 2:
       for(; k<46; k++)
       {
-        if(Odalar[k]!=Dolu)
+        if(Odalar[k] != Dolu)
         {
-          Odalar[k]=Dolu;
+          Odalar[k] = Dolu;
           cout<<"Adınız: ";
           cin>>ad;
           cout<<"Soyadınız: ";
           cin>>soyad;
           cout<<"Kalacağınız gün sayısı: ";
           cin>>x2;
-          Toplam += x2*70;
+          Toplam += x2 * 70;
           SayacIki++;
           MusteriAdi[j] = new string;
           *MusteriAdi[j] = ad;
@@ -129,13 +129,13 @@ void Otel::OdaRezervasyonu()
           break;
         }
       }
-      if(k==46)
+      if(k == 46)
         cout<<"Ne yazık ki bütün odalar dolu."<<endl;
       break;
     case 3:
       for(; i<6; i++)
       {
-        if(Odalar[i]!=Dolu)
+        if(Odalar[i] != Dolu)
         {
           Odalar[i]=Dolu;
           cout<<"Adınız: ";
@@ -144,7 +144,7 @@ void Otel::OdaRezervasyonu()
           cin>>soyad;
           cout<<"Kalacağınız gün sayısı: ";
           cin>>x2;
-          Toplam += x2*300;
+          Toplam += x2 * 300;
           SayacBir++;
           MusteriAdi[j] = new string;
           *MusteriAdi[j] = ad;
@@ -153,7 +153,7 @@ void Otel::OdaRezervasyonu()
           break;
         }
       }
-      if(i==6)
+      if(i == 6)
         cout<<"Ne yazık ki bütün sunum odaları dolu."<<endl;
       break;
     default: cout<<"Lütfen doğru düğmeye basınız."<<endl;
@@ -166,11 +166,11 @@ void Otel::OdaBosaltma()
   int sayi;
   cin>>sayi;
   
-  if(Odalar[sayi]==Dolu)
+  if(Odalar[sayi] == Dolu)
   {  
     if(sayi>0 && sayi<6)
     {
-      Odalar[sayi]=Bos;
+      Odalar[sayi] = Bos;
       delete MusteriAdi[sayi];
       delete MusteriSoyadi[sayi];
       SayacBir--;
@@ -188,4 +188,17 @@ void Otel::OdaBosaltma()
   }
   else
     cout<<"Lütfen oda numarasını doğru giriniz.\n"<<endl;
+}
+
+void Otel::MusteriSayisi()
+{
+  cout<<"Dolu oda sayısı: "<<SayacBir + SayacIki<<endl;
+}
+
+void Otel::YatakOdasiSorgu()
+{
+  if(SayacIki == 0)
+    cout<<"Bütün odalar boş."<<endl;
+  else
+  {}
 }

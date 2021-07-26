@@ -69,7 +69,7 @@ void Otel::OdaIsletmesi()
       case 7: exit(1);
       default: cout<<"\nYanlış bir sayı girildi. Yeniden deneyiniz: "<<endl;
     }
-  } while(sayi!=7);
+  } while(sayi != 7);
 }
 
 void Otel::OdaRezervasyonu()
@@ -105,7 +105,7 @@ void Otel::OdaRezervasyonu()
           break;
         }
       }
-      if(j==16)
+      if(j == 16)
         cout<<"Ne yazık ki bütün tek kişilik odalar dolu."<<endl;
       break;
     case 2:
@@ -228,6 +228,6 @@ void Otel::Gelir()
 
 int main()
 {
-  Otel AO;
+  Otel AltintepeOteli;
   return 0;
 }

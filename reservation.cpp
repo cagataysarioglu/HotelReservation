@@ -85,7 +85,7 @@ void Otel::OdaRezervasyonu()
   
   switch(sayi){
     case 1:
-      for(;j<16;j++)
+      for(; j<16; j++)
       {
         if(Odalar[j]!=Bos)
         {
@@ -109,7 +109,7 @@ void Otel::OdaRezervasyonu()
         cout<<"Ne yazık ki bütün tek kişilik odalar dolu."<<endl;
       break;
     case 2:
-      for(;k<46;k++)
+      for(; k<46; k++)
       {
         if(Odalar[k]!=Dolu)
         {
@@ -133,7 +133,7 @@ void Otel::OdaRezervasyonu()
         cout<<"Ne yazık ki bütün odalar dolu."<<endl;
       break;
     case 3:
-      for(;i<6;i++)
+      for(; i<6; i++)
       {
         if(Odalar[i]!=Dolu)
         {
@@ -158,4 +158,34 @@ void Otel::OdaRezervasyonu()
       break;
     default: cout<<"Lütfen doğru düğmeye basınız."<<endl;
   }
+}
+
+void Otel::OdaBosaltma()
+{
+  cout<<"Boşaltacağınız oda numarası: ";
+  int sayi;
+  cin>>sayi;
+  
+  if(Odalar[sayi]==Dolu)
+  {  
+    if(sayi>0 && sayi<6)
+    {
+      Odalar[sayi]=Bos;
+      delete MusteriAdi[sayi];
+      delete MusteriSoyadi[sayi];
+      SayacBir--;
+      cout<<"Belirtilen oda silindi."<<endl;
+    }
+    else
+      if(sayi>5 && sayi<14)
+      {
+        Odalar[sayi]=Bos;
+        delete MusteriAdi[sayi];
+        delete MusteriSoyadi[sayi];
+        SayacIki--;
+        cout<<"Belirtilen oda silindi."<<endl;
+      }
+  }
+  else
+    cout<<"Lütfen oda numarasını doğru giriniz.\n"<<endl;
 }

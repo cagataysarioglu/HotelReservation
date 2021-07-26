@@ -154,7 +154,7 @@ void Otel::OdaRezervasyonu()
         }
       }
       if(i==6)
-        cout<<"Ne yazık ki bütün sunum odalar dolu."<<endl;
+        cout<<"Ne yazık ki bütün sunum odaları dolu."<<endl;
       break;
     default: cout<<"Lütfen doğru düğmeye basınız."<<endl;
   }

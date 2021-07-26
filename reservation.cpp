@@ -200,5 +200,34 @@ void Otel::YatakOdasiSorgu()
   if(SayacIki == 0)
     cout<<"Bütün odalar boş."<<endl;
   else
-  {}
+  {
+    cout<<"Oda Numarası Müşteri Adı Müşteri Soyadı"<<endl;
+    cout<<"---------------------------------------"<<endl;
+    for(int i=6; i<46; i++)
+      if(Odalar[i] == Dolu)
+        cout<<i<<"\t\t"<<*MusteriAdi[i]<<"\t\t"<<*MusteriSoyadi[i]<<endl;
+  }
+}
+
+void Otel::SunumOdasiSorgu()
+{
+  if(SayacBir != 6){
+    cout<<"Sunum odaları dolu."<<endl;
+    for(int i=1; i<6; i++)
+      if(Odalar[i] == Dolu)
+        cout<<"Oda Numarası: "<<i<<endl;
+  }
+  else
+    cout<<"Bütün sunum odaları boş."<<endl;
+}
+
+void Otel::Gelir()
+{
+  cout<<"Gelir: "<<Toplam;
+}
+
+int main()
+{
+  Otel AO;
+  return 0;
 }
